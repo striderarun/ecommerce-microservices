@@ -1,0 +1,20 @@
+group 'com.arun.ecommerce'
+version '1.0-SNAPSHOT'
+
+apply from : '../build.gradle'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile("com.arun.ecommerce:CommonService:1.0-SNAPSHOT")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.cloud:spring-cloud-starter-eureka:1.2.3.RELEASE")
+    compile("org.springframework.cloud:spring-cloud-starter-feign:1.2.3.RELEASE")
+}
+

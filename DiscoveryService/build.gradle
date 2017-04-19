@@ -1,0 +1,23 @@
+group 'com.arun.ecommerce'
+version '1.0-SNAPSHOT'
+
+apply from: '../build.gradle'
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.RELEASE"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.cloud:spring-cloud-starter-eureka-server:1.2.3.RELEASE')
+}
+
+

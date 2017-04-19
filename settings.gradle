@@ -1,0 +1,9 @@
+include 'CommonService'
+include 'CustomerService'
+include 'OrderService'
+include 'ShippingService'
+include 'ProductService'
+include 'GatewayService'
+include 'DiscoveryService'
+include 'DiscoveryService'
+
