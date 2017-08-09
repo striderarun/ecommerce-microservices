@@ -1,2 +1,2 @@
 language : java
-install: ./install-dependencies.sh
+install: ./install_dependencies.sh
