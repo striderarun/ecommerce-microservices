@@ -1,2 +1,2 @@
 language : java
-before_script: gradle install
+install: ./install-dependencies.sh
