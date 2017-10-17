@@ -8,11 +8,14 @@ import com.eshop.user.domain.CustomerOrders;
 
 import java.util.List;
 
-/**
- * Created by arun_subramonian on 12/18/16.
- */
 public interface CustomerService {
 
+    /**
+     * Fetch Customer Details By Id
+     *
+     * @param id
+     * @return
+     */
     CustomerBean fetchCustomerDetails(Long id);
 
     List<CustomerOrdersBean> fetchCustomerOrders(Long customerId);
