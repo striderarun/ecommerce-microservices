@@ -36,6 +36,11 @@ public class CustomerRestServiceImpl implements CustomerRestService {
     }
 
     @RequestMapping(value= "/{id}/orders", method = RequestMethod.GET)
+    @ApiMethod(description = "Fetch Customer Orders", responsestatuscode = "200 - OK")
+    @ApiHeaders(headers = {
+            @ApiHeader(name = ACCEPT),
+            @ApiHeader(name = CONTENT_TYPE)
+    })
     @ResponseStatus(HttpStatus.OK)
     public List<CustomerOrdersBean> fetchCustomerOrders(@PathVariable Long id) {
         return customerService.fetchCustomerOrders(id);
