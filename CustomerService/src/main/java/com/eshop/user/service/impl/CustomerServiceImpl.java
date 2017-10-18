@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by arun_subramonian on 12/18/16.
- */
+
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
