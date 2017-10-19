@@ -47,6 +47,11 @@ public class CustomerRestServiceImpl implements CustomerRestService {
     }
 
     @RequestMapping(method = RequestMethod.POST)
+    @ApiMethod(description = "Add Customer", responsestatuscode = "200 - OK")
+    @ApiHeaders(headers = {
+            @ApiHeader(name = ACCEPT),
+            @ApiHeader(name = CONTENT_TYPE)
+    })
     @ResponseStatus(HttpStatus.OK)
     public CustomerBean addCustomer(@RequestBody CustomerBean customer) {
         return customerService.addCustomer(customer);

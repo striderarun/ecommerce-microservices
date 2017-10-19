@@ -26,6 +26,12 @@ public interface CustomerService {
      */
     List<CustomerOrdersBean> fetchCustomerOrders(Long customerId);
 
+    /**
+     * Fetch customer orders
+     *
+     * @param orderId
+     * @return
+     */
     CustomerOrdersBean fetchCustomerOrder(Long orderId);
 
     CustomerBean addCustomer(CustomerBean customer);
