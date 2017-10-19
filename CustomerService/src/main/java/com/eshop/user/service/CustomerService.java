@@ -34,10 +34,26 @@ public interface CustomerService {
      */
     CustomerOrdersBean fetchCustomerOrder(Long orderId);
 
+    /**
+     * Add Cusotmer
+     *
+     * @param customer
+     * @return
+     */
     CustomerBean addCustomer(CustomerBean customer);
 
+    /**
+     * Create cusotmer orders
+     * @param customerOrders
+     */
     void createCustomerOrder(CustomerOrdersBean customerOrders);
 
+    /**
+     * Update customer order status
+     *
+     * @param orderId
+     * @param orderStatus
+     */
     void updateCustomerOrderStatus(Long orderId, OrderStatus orderStatus);
 
 

@@ -7,6 +7,7 @@ import com.eshop.user.service.CustomerService;
 import org.jsondoc.core.annotation.ApiHeader;
 import org.jsondoc.core.annotation.ApiHeaders;
 import org.jsondoc.core.annotation.ApiMethod;
+import org.jsondoc.core.annotation.ApiResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -31,6 +32,7 @@ public class CustomerRestServiceImpl implements CustomerRestService {
             @ApiHeader(name = CONTENT_TYPE)
     })
     @ResponseStatus(HttpStatus.OK)
+    @ApiResponseObject
     public CustomerBean fetchCustomerDetails(@PathVariable Long id) {
         return customerService.fetchCustomerDetails(id);
     }
@@ -42,6 +44,7 @@ public class CustomerRestServiceImpl implements CustomerRestService {
             @ApiHeader(name = CONTENT_TYPE)
     })
     @ResponseStatus(HttpStatus.OK)
+    @ApiResponseObject
     public List<CustomerOrdersBean> fetchCustomerOrders(@PathVariable Long id) {
         return customerService.fetchCustomerOrders(id);
     }
@@ -53,6 +56,7 @@ public class CustomerRestServiceImpl implements CustomerRestService {
             @ApiHeader(name = CONTENT_TYPE)
     })
     @ResponseStatus(HttpStatus.OK)
+    @ApiResponseObject
     public CustomerBean addCustomer(@RequestBody CustomerBean customer) {
         return customerService.addCustomer(customer);
     }
