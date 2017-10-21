@@ -7,10 +7,14 @@ import com.eshop.order.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.jsondoc.core.annotation.ApiHeader;
+import org.jsondoc.core.annotation.ApiHeaders;
+import org.jsondoc.core.annotation.ApiMethod;
+import org.jsondoc.core.annotation.ApiResponseObject;
 
-/**
- * Created by arun_subramonian on 12/19/16.
- */
+import static org.springframework.http.HttpHeaders.ACCEPT;
+import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
+
 @RestController
 @RequestMapping(value = "/services/order")
 public class OrderRestServiceImpl implements OrderRestService {
@@ -20,6 +24,11 @@ public class OrderRestServiceImpl implements OrderRestService {
 
     @Override
     @RequestMapping(method = RequestMethod.POST)
+    @ApiMethod(description = "Fetch Customer Orders", responsestatuscode = "200 - OK")
+    @ApiHeaders(headers = {
+            @ApiHeader(name = ACCEPT),
+            @ApiHeader(name = CONTENT_TYPE)
+    })
     @ResponseStatus(HttpStatus.OK)
     public OrderBean createOrder(@RequestBody OrderBean orderBean) {
         return orderService.createOrder(orderBean);
