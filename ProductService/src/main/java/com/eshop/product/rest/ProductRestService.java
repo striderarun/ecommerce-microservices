@@ -9,6 +9,10 @@ import java.util.List;
  * Created by arun_subramonian on 12/19/16.
  */
 public interface ProductRestService {
-
+    
+    /*
+    * Fetch all products
+    *
+    */
     List<ProductBean> fetchAllProducts();
 }
