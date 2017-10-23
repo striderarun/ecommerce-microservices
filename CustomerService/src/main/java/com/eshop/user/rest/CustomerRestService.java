@@ -5,10 +5,9 @@ import com.eshop.common.beans.CustomerOrdersBean;
 
 import java.util.List;
 
-/**
- * Created by arun_subramonian on 12/18/16.
- */
+
 public interface CustomerRestService {
+
     /**
     * Fetch Customer Details
     *
@@ -24,6 +23,6 @@ public interface CustomerRestService {
     /*
     * Add customer
     *
-    "/
+    */
     CustomerBean addCustomer(CustomerBean customer);
 }
