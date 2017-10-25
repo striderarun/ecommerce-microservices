@@ -1,8 +1,6 @@
 package com.eshop.common.beans;
 
-/**
- * Created by arun_subramonian on 12/23/16.
- */
+
 public class CustomerBean {
 
     private Long id;
