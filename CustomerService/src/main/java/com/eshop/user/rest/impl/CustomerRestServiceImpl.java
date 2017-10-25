@@ -4,9 +4,11 @@ import com.eshop.common.beans.CustomerBean;
 import com.eshop.common.beans.CustomerOrdersBean;
 import com.eshop.user.rest.CustomerRestService;
 import com.eshop.user.service.CustomerService;
+import org.jsondoc.core.annotation.ApiBodyObject;
 import org.jsondoc.core.annotation.ApiHeader;
 import org.jsondoc.core.annotation.ApiHeaders;
 import org.jsondoc.core.annotation.ApiMethod;
+import org.jsondoc.core.annotation.ApiPathParam;
 import org.jsondoc.core.annotation.ApiResponseObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,7 +35,7 @@ public class CustomerRestServiceImpl implements CustomerRestService {
     })
     @ResponseStatus(HttpStatus.OK)
     @ApiResponseObject
-    public CustomerBean fetchCustomerDetails(@PathVariable Long id) {
+    public CustomerBean fetchCustomerDetails(@ApiPathParam(name = "id") @PathVariable Long id) {
         return customerService.fetchCustomerDetails(id);
     }
 
@@ -45,7 +47,7 @@ public class CustomerRestServiceImpl implements CustomerRestService {
     })
     @ResponseStatus(HttpStatus.OK)
     @ApiResponseObject
-    public List<CustomerOrdersBean> fetchCustomerOrders(@PathVariable Long id) {
+    public List<CustomerOrdersBean> fetchCustomerOrders(@ApiPathParam(name = "id") @PathVariable Long id) {
         return customerService.fetchCustomerOrders(id);
     }
 
@@ -57,7 +59,7 @@ public class CustomerRestServiceImpl implements CustomerRestService {
     })
     @ResponseStatus(HttpStatus.OK)
     @ApiResponseObject
-    public CustomerBean addCustomer(@RequestBody CustomerBean customer) {
+    public CustomerBean addCustomer(@ApiBodyObject @RequestBody CustomerBean customer) {
         return customerService.addCustomer(customer);
     }
 }
